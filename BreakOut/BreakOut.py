@@ -73,9 +73,9 @@ class BreakOut:
 
         
 
-        if self.ballPosX<2 or self.ballPosX>self.x-3:
+        if self.ballPosX<2 or self.ballPosX>self.mapx-3:
             self.addX*=-1
-        if self.ballPosY<2 or self.ballPosY>self.y-3:
+        if self.ballPosY<2 or self.ballPosY>self.mapy-3:
             self.addY*=-1
         """for blockX in  range(self.mapx):
             for blockY in range(2):
