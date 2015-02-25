@@ -9,8 +9,8 @@ class BreakOut:
 
 
     def __init__(self,_x,_y):
-        self.x=_x
-        self.y=_y
+        self.mapx=_x
+        self.mapy=_y
 
         self.ballPosX=5
         self.ballPosY=5
@@ -23,28 +23,25 @@ class BreakOut:
 
         ###self.block=[[0 for j in range(self.x)] for i in range(2)]
        
-        
-        
-
     def update(self):
         field=[]
 
-        for i in range(self.y):
-            for j in range(self.x):
-                if i==0 or i==self.y-1:
+        for i in range(self.mapy):
+            for j in range(self.mapx):
+                if i==0 or i==self.mapy-1:
                     if j==0:
                         field.append("+")
-                    elif j==self.x-1:
+                    elif j==self.mapx-1:
                         field.append("+")
                         field.append("\n")   
                     else:
                         field.append("-")
 
-                elif i==self.y-3:
+                elif i==self.mapy-3:
                     if j==0:
                         field.append("|")
 
-                    elif j==self.x-1:
+                    elif j==self.mapx-1:
                         field.append("|")
                         field.append("\n")
 
@@ -64,7 +61,7 @@ class BreakOut:
                     if j==0:
                         field.append("|")
 
-                    elif j==self.x-1:
+                    elif j==self.mapx-1:
                         field.append("|")
                         field.append("\n")
 
@@ -80,12 +77,12 @@ class BreakOut:
             self.addX*=-1
         if self.ballPosY<2 or self.ballPosY>self.y-3:
             self.addY*=-1
-        """for blockX in  range(self.x):
+        """for blockX in  range(self.mapx):
             for blockY in range(2):
                 if self.ballPosX==blockX and self.ballPosY==blockY:
                         self.block[blockY][blockX]=1
                         """
-        if self.ballPosY==self.y-3 and self.ballPosX==self.barPosX:
+        if self.ballPosY==self.mapy-3 and self.ballPosX==self.barPosX:
             self.addY*=-1
 
         map_string="".join(field)
